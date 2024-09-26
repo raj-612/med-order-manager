@@ -23,7 +23,7 @@
         "notificationArns": [],
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c525a842f3e1e8dde200f50109fe453b875c6e45e502e4e2a412552c25cf99fa.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/27c13cce84e161b283745075241a766e9d9b496ccab0083e06f310da2b3e15c8.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -274,6 +274,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/GraphQLAPI/DefaultApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPIDefaultApiKey1C8ED374"
           }
         ],
         "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/GraphQLAPI/NONE_DS": [
@@ -884,18 +890,6 @@
             "data": "amplifyDataTodoNestedStackTodoNestedStackResource551CEA56"
           }
         ],
-        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AuthRolePolicy01/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "amplifyDataAuthRolePolicy01567A5654"
-          }
-        ],
-        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/UnauthRolePolicy01/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "amplifyDataUnauthRolePolicy01355B9DCF"
-          }
-        ],
         "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
@@ -1068,6 +1062,12 @@
             "data": "amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB47B5A861DestinationBucketArn"
           }
         ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIDefaultApiKey046136CBApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIDefaultApiKey046136CBApiKey"
+          }
+        ],
         "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data.NestedStack/data.NestedStackResource": [
           {
             "type": "aws:cdk:logicalId",
@@ -1102,6 +1102,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "amplifyApiModelSchemaS3Uri"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/awsAppsyncApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiKey"
           }
         ],
         "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/awsAppsyncAdditionalAuthenticationTypes": [

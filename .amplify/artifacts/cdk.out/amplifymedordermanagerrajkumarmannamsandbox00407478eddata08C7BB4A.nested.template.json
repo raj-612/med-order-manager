@@ -15,9 +15,12 @@
         "Ref": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthUserPool87AA3BD4Ref"
        }
       }
+     },
+     {
+      "AuthenticationType": "AWS_IAM"
      }
     ],
-    "AuthenticationType": "AWS_IAM",
+    "AuthenticationType": "API_KEY",
     "Name": "amplifyData",
     "Tags": [
      {
@@ -48,11 +51,26 @@
      ]
     },
     "DefinitionS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7d100cbfa146b261f599f815f9e4aed00229cf8bc6fd5feca0d1c627c4e01301.graphql"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f0bd57844121f18905b0e0199679a26de078f1ed0244a0b8abdd6c4667b805ec.graphql"
     }
    },
    "Metadata": {
     "aws:cdk:path": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/GraphQLAPI/TransformerSchema"
+   }
+  },
+  "amplifyDataGraphQLAPIDefaultApiKey1C8ED374": {
+   "Type": "AWS::AppSync::ApiKey",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "amplifyDataGraphQLAPI42A6FA33",
+      "ApiId"
+     ]
+    },
+    "Expires": 1729973338
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/GraphQLAPI/DefaultApiKey"
    }
   },
   "amplifyDataGraphQLAPINONEDS684BF699": {
@@ -203,7 +221,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/7bcc14c232bff64c8d063845b469b429c5d8c33996d2342012c5dd7eb7018621.json"
+       "/62ecf3db3e49ffe589441202c67baf59737b9be8ac01e508c84c417235469d71.json"
       ]
      ]
     }
@@ -217,326 +235,6 @@
     "aws:cdk:path": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo.NestedStack/Todo.NestedStackResource",
     "aws:asset:path": "amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataTodo06F99724.nested.template.json",
     "aws:asset:property": "TemplateURL"
-   }
-  },
-  "amplifyDataAuthRolePolicy01567A5654": {
-   "Type": "AWS::IAM::ManagedPolicy",
-   "Properties": {
-    "Description": "",
-    "Path": "/",
-    "PolicyDocument": {
-     "Statement": [
-      {
-       "Action": "appsync:GraphQL",
-       "Effect": "Allow",
-       "Resource": [
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/*",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Todo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Query",
-           "fieldName": "getTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Query",
-           "fieldName": "listTodos"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Mutation",
-           "fieldName": "createTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Mutation",
-           "fieldName": "updateTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Mutation",
-           "fieldName": "deleteTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Subscription",
-           "fieldName": "onCreateTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Subscription",
-           "fieldName": "onUpdateTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Subscription",
-           "fieldName": "onDeleteTodo"
-          }
-         ]
-        }
-       ]
-      }
-     ],
-     "Version": "2012-10-17"
-    },
-    "Roles": [
-     {
-      "Ref": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthauthenticatedUserRoleEF6F6205Ref"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AuthRolePolicy01/Resource"
-   }
-  },
-  "amplifyDataUnauthRolePolicy01355B9DCF": {
-   "Type": "AWS::IAM::ManagedPolicy",
-   "Properties": {
-    "Description": "",
-    "Path": "/",
-    "PolicyDocument": {
-     "Statement": [
-      {
-       "Action": "appsync:GraphQL",
-       "Effect": "Allow",
-       "Resource": [
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/*",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Todo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Query",
-           "fieldName": "getTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Query",
-           "fieldName": "listTodos"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Mutation",
-           "fieldName": "createTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Mutation",
-           "fieldName": "updateTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Mutation",
-           "fieldName": "deleteTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Subscription",
-           "fieldName": "onCreateTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Subscription",
-           "fieldName": "onUpdateTodo"
-          }
-         ]
-        },
-        {
-         "Fn::Sub": [
-          "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
-          {
-           "apiId": {
-            "Fn::GetAtt": [
-             "amplifyDataGraphQLAPI42A6FA33",
-             "ApiId"
-            ]
-           },
-           "typeName": "Subscription",
-           "fieldName": "onDeleteTodo"
-          }
-         ]
-        }
-       ]
-      }
-     ],
-     "Version": "2012-10-17"
-    },
-    "Roles": [
-     {
-      "Ref": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthunauthenticatedUserRoleB2A71FB8Ref"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/UnauthRolePolicy01/Resource"
    }
   },
   "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucket9CCB4ACA": {
@@ -708,7 +406,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "76b9cb787843795ad95966b867f6ef348480676166e6ac8fd4d53cef654a6b16.zip"
+     "a11384c5a52cea0a84bb9be0edf4462d02d79e13843bd43a7bd4626638951596.zip"
     ],
     "SourceMarkers": [
      {}
@@ -1019,7 +717,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VRy26DMBD8lt4dl6RSeyZE7SWN0iD1ijZmIU78oF4ThBD/XoELNKd5eDUeezd8/Rrx6AkaWon8tlLyzLsDksc89SBu7IRkayeQQUNZB1VFrRG8+3BQXX5UXMktELKkMKPztY8r+U+l4oIa2MEa3IGHNEQlhVlUz+gl64AIPfF4AJZjpWyr0Xi+rcUN/W42hmneBXe8OdAh8o8FOFolRbvYQfdMgubdJxgoMV9mHo2TVWPHEZehKUKBPufAu6Qwe2jRfaMjaQ1LpSkVemveayP84MwkKWazZ0Sad6l30pRHcKDRoxvzJ9H3bPyH1EMpTTmchV0kNXmr540MFSceSmVqKJRBQ0JJHjeUKDl2fMgPL66qMfsh8ujsXebopp0m1uQytDY2R36l5/sm4us3Hj1dScqVq42XGvkp4C/tTKorTgIAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VRwW7CMAz9Fu4hAyZt51K0HcYQo9KuyKQuGNIki1NQVfXfpzQDxsnvPUfPfs5MTl8mcjKCC49VeRpr2sluhRywLAKok9gg28YrFHDhbQfOcWuU7N49uMOPzhzNgVHklRmUr2Xm6B8r1AFriELm6ANbsbIGFxCgSKZ5Ze6sF/y87YAZA8ssFlGi07at0QQ5b9QJw+ImxNeyS+qwQ4LR8g+lsraaVHuXE++FhnpXguzyyiyhRf+NnskaUZDZawzWvDVGhajcQF7dxF4Q1LLbWD2EGOp90nUGcy27Ingy+zV4qDGgH/pX0vdiCFoE2JPZx146e95wsPXt+HHEFafFtzouvYULK00yu3Cuacjx4B/JJzg3eD9Yrr09U4n++n25NSWlZMaWKI/8dJ5N5PRVTkZHJhr7xgSqUW5S/QWoVDfnOQIAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/CDKMetadata/Default"
@@ -1490,6 +1188,14 @@
     "Fn::GetAtt": [
      "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB21775929",
      "DestinationBucketArn"
+    ]
+   }
+  },
+  "amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIDefaultApiKey046136CBApiKey": {
+   "Value": {
+    "Fn::GetAtt": [
+     "amplifyDataGraphQLAPIDefaultApiKey1C8ED374",
+     "ApiKey"
     ]
    }
   }
