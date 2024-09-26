@@ -1,0 +1,1147 @@
+{
+  "version": "38.0.1",
+  "artifacts": {
+    "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "amplify:deployment-type": "sandbox",
+          "created-by": "amplify"
+        },
+        "validateOnSynth": false,
+        "notificationArns": [],
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c525a842f3e1e8dde200f50109fe453b875c6e45e502e4e2a412552c25cf99fa.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed.assets"
+      ],
+      "metadata": {
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "amplify:deployment-type",
+                "Value": "sandbox"
+              },
+              {
+                "Key": "created-by",
+                "Value": "amplify"
+              }
+            ]
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/deploymentType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deploymentType"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/region": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "region"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifyAuth/UserPool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPool4BA7F805"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifyAuth/UserPoolAppClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPoolAppClient2626C6F8"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifyAuth/IdentityPool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPool3FDE84CC"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifyAuth/authenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthauthenticatedUserRoleD8DA3689"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifyAuth/unauthenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthunauthenticatedUserRole2B524D9E"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifyAuth/IdentityPoolRoleAttachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPoolRoleAttachment045F17C8"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthUserPool87AA3BD4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthUserPool87AA3BD4Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthUserPoolAppClient60887DF7Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthUserPoolAppClient60887DF7Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthIdentityPool525DD275Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthIdentityPool525DD275Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthauthenticatedUserRoleEF6F6205Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthauthenticatedUserRoleEF6F6205Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth/amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthunauthenticatedUserRoleB2A71FB8Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthunauthenticatedUserRoleB2A71FB8Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/auth.NestedStack/auth.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "auth179371D7"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/userPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "userPoolId"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/webClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webClientId"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/identityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "identityPoolId"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/authRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "authRegion"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/allowUnauthenticatedIdentities": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "allowUnauthenticatedIdentities"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/signupAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "signupAttributes"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/usernameAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "usernameAttributes"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/verificationMechanisms": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "verificationMechanisms"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/passwordPolicyMinLength": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyMinLength"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/passwordPolicyRequirements": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyRequirements"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/mfaConfiguration": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaConfiguration"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/mfaTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaTypes"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/socialProviders": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "socialProviders"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/oauthCognitoDomain": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthCognitoDomain"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/oauthScope": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthScope"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/oauthRedirectSignIn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignIn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/oauthRedirectSignOut": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignOut"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/oauthResponseType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthResponseType"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/oauthClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthClientId"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/GraphQLAPI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPI42A6FA33"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/GraphQLAPI/TransformerSchema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/GraphQLAPI/NONE_DS": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/GraphQLAPI/NONE_DS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPINONEDS684BF699"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/AmplifyManagedTableIsCompleteRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableIsCompleteRoleF825222C"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleB4E71DEA"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleDefaultPolicyF6DABCB6"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkonEvent1DFC2ECC"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-isComplete/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkisComplete2E51021B"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRole470BE899"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRoleDefaultPolicy89F3836A"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachine060600BC"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIC56BFF6AApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIC56BFF6AApiId"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager/amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent4925202AArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent4925202AArn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyTableManager.NestedStack/AmplifyTableManager.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/ShouldUseServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUseServerSideEncryption"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/TodoTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Todo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/TodoTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Todo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/CustomTableTodoTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Todo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/GetAttTodoTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttTodoTableStreamArn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/GetAttTodoTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttTodoTableName"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/TodoIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "TodoIAMRole"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/TodoIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoIAMRole2DA8E66E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "TodoIAMRole"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/TodoDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "TodoTable"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/TodoDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "TodoTable"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/QuerygetTodoauth0Function/QuerygetTodoauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetTodoauth0FunctionQuerygetTodoauth0FunctionAppSyncFunction846D8436"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetTodoauth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/QuerygetTodopostAuth0Function/QuerygetTodopostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetTodopostAuth0FunctionQuerygetTodopostAuth0FunctionAppSyncFunction6BE14593"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetTodopostAuth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/QueryGetTodoDataResolverFn/QueryGetTodoDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetTodoDataResolverFnQueryGetTodoDataResolverFnAppSyncFunctionE2B57DAD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetTodoDataResolverFn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/queryGetTodoResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetTodoResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getTodo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/QuerylistTodosauth0Function/QuerylistTodosauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistTodosauth0FunctionQuerylistTodosauth0FunctionAppSyncFunction7D761961"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistTodosauth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/QuerylistTodospostAuth0Function/QuerylistTodospostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistTodospostAuth0FunctionQuerylistTodospostAuth0FunctionAppSyncFunction154D8577"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistTodospostAuth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/QueryListTodosDataResolverFn/QueryListTodosDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListTodosDataResolverFnQueryListTodosDataResolverFnAppSyncFunctionF825FE47"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListTodosDataResolverFn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/queryListTodosResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListTodoResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listTodos"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationcreateTodoinit0Function/MutationcreateTodoinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateTodoinit0FunctionMutationcreateTodoinit0FunctionAppSyncFunction54DE5B8B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateTodoinit0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationcreateTodoauth0Function/MutationcreateTodoauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateTodoauth0FunctionMutationcreateTodoauth0FunctionAppSyncFunction21817E36"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateTodoauth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationcreateTodopostAuth0Function/MutationcreateTodopostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateTodopostAuth0FunctionMutationcreateTodopostAuth0FunctionAppSyncFunctionED59EB9F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateTodopostAuth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationCreateTodoDataResolverFn/MutationCreateTodoDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateTodoDataResolverFnMutationCreateTodoDataResolverFnAppSyncFunction900EC5CF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateTodoDataResolverFn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/mutationCreateTodoResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateTodoResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createTodo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationupdateTodoinit0Function/MutationupdateTodoinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateTodoinit0FunctionMutationupdateTodoinit0FunctionAppSyncFunction1B95BB19"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateTodoinit0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationupdateTodoauth0Function/MutationupdateTodoauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateTodoauth0FunctionMutationupdateTodoauth0FunctionAppSyncFunction1E4A3112"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateTodoauth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationupdateTodopostAuth0Function/MutationupdateTodopostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateTodopostAuth0FunctionMutationupdateTodopostAuth0FunctionAppSyncFunction50C507D7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateTodopostAuth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationUpdateTodoDataResolverFn/MutationUpdateTodoDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateTodoDataResolverFnMutationUpdateTodoDataResolverFnAppSyncFunctionBC238C49"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateTodoDataResolverFn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/mutationUpdateTodoResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateTodoResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateTodo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationdeleteTodoauth0Function/MutationdeleteTodoauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteTodoauth0FunctionMutationdeleteTodoauth0FunctionAppSyncFunctionC82C218C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteTodoauth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationdeleteTodopostAuth0Function/MutationdeleteTodopostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteTodopostAuth0FunctionMutationdeleteTodopostAuth0FunctionAppSyncFunction483271A2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteTodopostAuth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/MutationDeleteTodoDataResolverFn/MutationDeleteTodoDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteTodoDataResolverFnMutationDeleteTodoDataResolverFnAppSyncFunction3879153F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteTodoDataResolverFn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/mutationDeleteTodoResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteTodoResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteTodo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptiononCreateTodoauth0Function/SubscriptiononCreateTodoauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateTodoauth0FunctionSubscriptiononCreateTodoauth0FunctionAppSyncFunction042EF9E1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateTodoauth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptiononCreateTodopostAuth0Function/SubscriptiononCreateTodopostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateTodopostAuth0FunctionSubscriptiononCreateTodopostAuth0FunctionAppSyncFunction18E34C4E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateTodopostAuth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptionOnCreateTodoDataResolverFn/SubscriptionOnCreateTodoDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateTodoDataResolverFnSubscriptionOnCreateTodoDataResolverFnAppSyncFunction462A70C9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateTodoDataResolverFn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/subscriptionOnCreateTodoResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateTodoResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateTodo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptiononUpdateTodoauth0Function/SubscriptiononUpdateTodoauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateTodoauth0FunctionSubscriptiononUpdateTodoauth0FunctionAppSyncFunction80D0DFA3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateTodoauth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptiononUpdateTodopostAuth0Function/SubscriptiononUpdateTodopostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateTodopostAuth0FunctionSubscriptiononUpdateTodopostAuth0FunctionAppSyncFunction04445BC7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateTodopostAuth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptionOnUpdateTodoDataResolverFn/SubscriptionOnUpdateTodoDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateTodoDataResolverFnSubscriptionOnUpdateTodoDataResolverFnAppSyncFunction523DF0E4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateTodoDataResolverFn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/subscriptionOnUpdateTodoResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateTodoResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateTodo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptiononDeleteTodoauth0Function/SubscriptiononDeleteTodoauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteTodoauth0FunctionSubscriptiononDeleteTodoauth0FunctionAppSyncFunctionF69F2220"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteTodoauth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptiononDeleteTodopostAuth0Function/SubscriptiononDeleteTodopostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteTodopostAuth0FunctionSubscriptiononDeleteTodopostAuth0FunctionAppSyncFunctionE131CBE7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteTodopostAuth0Function"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/SubscriptionOnDeleteTodoDataResolverFn/SubscriptionOnDeleteTodoDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteTodoDataResolverFnSubscriptionOnDeleteTodoDataResolverFnAppSyncFunction3E641E8C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteTodoDataResolverFn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/subscriptionOnDeleteTodoResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteTodoResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteTodo"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource94E31951Outputs.amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent4925202AArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource94E31951Outputsamplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyTabC485C907"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIC56BFF6AApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIC56BFF6AApiId"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPINONEDSE98698FEName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPINONEDSE98698FEName"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputs.amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthauthenticatedUserRoleEF6F6205Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthauthenticatedUserRoleEF6F6205Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputs.amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthunauthenticatedUserRoleB2A71FB8Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthunauthenticatedUserRoleB2A71FB8Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputs.amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthIdentityPool525DD275Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthIdentityPool525DD275Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/Todo.NestedStack/Todo.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataTodoNestedStackTodoNestedStackResource551CEA56"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AuthRolePolicy01/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAuthRolePolicy01567A5654"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/UnauthRolePolicy01/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataUnauthRolePolicy01355B9DCF"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucket9CCB4ACA"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketPolicyF1C1C548"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketAutoDeleteObjectsCustomResource437F26F5"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentAwsCliLayerE322F905"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB21775929"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBC5D8AB21"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/AMPLIFY_DATA_GRAPHQL_ENDPOINTParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAGRAPHQLENDPOINTParameter1C2CBB16"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputs.amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthUserPool87AA3BD4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthUserPool87AA3BD4Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputs.amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthauthenticatedUserRoleEF6F6205Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthauthenticatedUserRoleEF6F6205Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputs.amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthunauthenticatedUserRoleB2A71FB8Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthunauthenticatedUserRoleB2A71FB8Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/reference-to-amplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputs.amplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthIdentityPool525DD275Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymedordermanagerrajkumarmannamsandbox00407478edauthNestedStackauthNestedStackResource02EE675EOutputsamplifymedordermanagerrajkumarmannamsandbox00407478edauthamplifyAuthIdentityPool525DD275Ref"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIC56BFF6AApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIC56BFF6AApiId"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIC56BFF6AGraphQLUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataGraphQLAPIC56BFF6AGraphQLUrl"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data/amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB47B5A861DestinationBucketArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifymedordermanagerrajkumarmannamsandbox00407478eddataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB47B5A861DestinationBucketArn"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/data.NestedStack/data.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "data7552DF31"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/awsAppsyncApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiId"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/awsAppsyncApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiEndpoint"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/awsAppsyncAuthenticationType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAuthenticationType"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/awsAppsyncRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncRegion"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/amplifyApiModelSchemaS3Uri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyApiModelSchemaS3Uri"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/awsAppsyncAdditionalAuthenticationTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAdditionalAuthenticationTypes"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/amplify-medordermanager-rajkumarmannam-sandbox-00407478ed/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "amplify-medordermanager-rajkumarmannam-sandbox-00407478ed"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
