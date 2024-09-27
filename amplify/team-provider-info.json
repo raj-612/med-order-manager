@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-medordermanager-dev-9c4ca-authRole",
+      "UnauthRoleArn": "arn:aws:iam::508889994634:role/amplify-medordermanager-dev-9c4ca-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::508889994634:role/amplify-medordermanager-dev-9c4ca-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-medordermanager-dev-9c4ca-deployment",
+      "UnauthRoleName": "amplify-medordermanager-dev-9c4ca-unauthRole",
+      "StackName": "amplify-medordermanager-dev-9c4ca",
+      "StackId": "arn:aws:cloudformation:us-west-2:508889994634:stack/amplify-medordermanager-dev-9c4ca/870b2880-7cf2-11ef-bd44-0206b7247a33",
+      "AmplifyAppId": "dd658koh52h1j"
+    }
+  }
+}
