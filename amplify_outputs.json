@@ -1,9 +1,9 @@
 {
   "auth": {
-    "user_pool_id": "us-west-2_rpEIU2eQu",
+    "user_pool_id": "us-west-2_C8gHjhcL8",
     "aws_region": "us-west-2",
-    "user_pool_client_id": "403kgs11e1pp3t9oa510bs3s9s",
-    "identity_pool_id": "us-west-2:010f565d-2e93-41c0-9804-e602b90adc32",
+    "user_pool_client_id": "2dt6oceotm10dfbr0piq9echmt",
+    "identity_pool_id": "us-west-2:dbec2f03-c025-4a00-8ef2-a7283c681da9",
     "mfa_methods": [],
     "standard_required_attributes": [
       "email"
@@ -25,9 +25,9 @@
     "unauthenticated_identities_enabled": true
   },
   "data": {
-    "url": "https://qh2spntswbawxjh3kubefqs5xu.appsync-api.us-west-2.amazonaws.com/graphql",
+    "url": "https://b4z223gogjeq5pob32dbmepnqq.appsync-api.us-west-2.amazonaws.com/graphql",
     "aws_region": "us-west-2",
-    "api_key": "da2-ek74gmzu5zda5e2uvfxvasywbu",
+    "api_key": "da2-6za4yw4k4ne3bpjg74khzmkpu4",
     "default_authorization_type": "API_KEY",
     "authorization_types": [
       "AMAZON_COGNITO_USER_POOLS",
@@ -36,8 +36,8 @@
     "model_introspection": {
       "version": 1,
       "models": {
-        "Todo": {
-          "name": "Todo",
+        "Order": {
+          "name": "Order",
           "fields": {
             "id": {
               "name": "id",
@@ -46,18 +46,67 @@
               "isRequired": true,
               "attributes": []
             },
-            "content": {
-              "name": "content",
+            "order_id": {
+              "name": "order_id",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "user_id": {
+              "name": "user_id",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "email": {
+              "name": "email",
               "isArray": false,
               "type": "String",
               "isRequired": false,
               "attributes": []
             },
-            "isDone": {
-              "name": "isDone",
+            "selected_package": {
+              "name": "selected_package",
               "isArray": false,
-              "type": "Boolean",
-              "isRequired": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "vials": {
+              "name": "vials",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": true,
+              "attributes": []
+            },
+            "pricePerVial": {
+              "name": "pricePerVial",
+              "isArray": false,
+              "type": "Float",
+              "isRequired": true,
+              "attributes": []
+            },
+            "total": {
+              "name": "total",
+              "isArray": false,
+              "type": "Float",
+              "isRequired": true,
+              "attributes": []
+            },
+            "created_at": {
+              "name": "created_at",
+              "isArray": false,
+              "type": "AWSTimestamp",
+              "isRequired": true,
+              "attributes": []
+            },
+            "updated_at": {
+              "name": "updated_at",
+              "isArray": false,
+              "type": "AWSTimestamp",
+              "isRequired": true,
               "attributes": []
             },
             "createdAt": {
@@ -78,7 +127,7 @@
             }
           },
           "syncable": true,
-          "pluralName": "Todos",
+          "pluralName": "Orders",
           "attributes": [
             {
               "type": "model",

@@ -1,9 +1,16 @@
 import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
 
 const schema = a.schema({
-  Todo: a.model({
-      content: a.string(),
-      isDone: a.boolean()
+  Order: a.model({
+      order_id: a.string().required(), 
+      user_id: a.string().required(),
+      email: a.string(),
+      selected_package: a.string().required(),
+      vials: a.integer().required(),
+      pricePerVial: a.float().required(),
+      total: a.float().required(),
+      created_at: a.timestamp().required(), 
+      updated_at: a.timestamp().required() 
     })
     .authorization(allow => [allow.publicApiKey()])
 });

@@ -1,0 +1,268 @@
+type Order @aws_iam @aws_api_key {
+  order_id: String!
+  user_id: String!
+  email: String
+  selected_package: String!
+  vials: Int!
+  pricePerVial: Float!
+  total: Float!
+  created_at: AWSTimestamp!
+  updated_at: AWSTimestamp!
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelOrderConnection @aws_api_key @aws_iam {
+  items: [Order]!
+  nextToken: String
+}
+
+input ModelOrderFilterInput {
+  order_id: ModelStringInput
+  user_id: ModelStringInput
+  email: ModelStringInput
+  selected_package: ModelStringInput
+  vials: ModelIntInput
+  pricePerVial: ModelFloatInput
+  total: ModelFloatInput
+  created_at: ModelIntInput
+  updated_at: ModelIntInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelOrderFilterInput]
+  or: [ModelOrderFilterInput]
+  not: ModelOrderFilterInput
+}
+
+type Query {
+  getOrder(id: ID!): Order @aws_api_key @aws_iam
+  listOrders(filter: ModelOrderFilterInput, limit: Int, nextToken: String): ModelOrderConnection @aws_api_key @aws_iam
+}
+
+input ModelOrderConditionInput {
+  order_id: ModelStringInput
+  user_id: ModelStringInput
+  email: ModelStringInput
+  selected_package: ModelStringInput
+  vials: ModelIntInput
+  pricePerVial: ModelFloatInput
+  total: ModelFloatInput
+  created_at: ModelIntInput
+  updated_at: ModelIntInput
+  and: [ModelOrderConditionInput]
+  or: [ModelOrderConditionInput]
+  not: ModelOrderConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateOrderInput {
+  order_id: String!
+  user_id: String!
+  email: String
+  selected_package: String!
+  vials: Int!
+  pricePerVial: Float!
+  total: Float!
+  created_at: AWSTimestamp!
+  updated_at: AWSTimestamp!
+  id: ID
+}
+
+input UpdateOrderInput {
+  order_id: String
+  user_id: String
+  email: String
+  selected_package: String
+  vials: Int
+  pricePerVial: Float
+  total: Float
+  created_at: AWSTimestamp
+  updated_at: AWSTimestamp
+  id: ID!
+}
+
+input DeleteOrderInput {
+  id: ID!
+}
+
+type Mutation {
+  createOrder(input: CreateOrderInput!, condition: ModelOrderConditionInput): Order @aws_api_key @aws_iam
+  updateOrder(input: UpdateOrderInput!, condition: ModelOrderConditionInput): Order @aws_api_key @aws_iam
+  deleteOrder(input: DeleteOrderInput!, condition: ModelOrderConditionInput): Order @aws_api_key @aws_iam
+}
+
+input ModelSubscriptionOrderFilterInput {
+  order_id: ModelSubscriptionStringInput
+  user_id: ModelSubscriptionStringInput
+  email: ModelSubscriptionStringInput
+  selected_package: ModelSubscriptionStringInput
+  vials: ModelSubscriptionIntInput
+  pricePerVial: ModelSubscriptionFloatInput
+  total: ModelSubscriptionFloatInput
+  created_at: ModelSubscriptionIntInput
+  updated_at: ModelSubscriptionIntInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionOrderFilterInput]
+  or: [ModelSubscriptionOrderFilterInput]
+}
+
+type Subscription {
+  onCreateOrder(filter: ModelSubscriptionOrderFilterInput): Order @aws_subscribe(mutations: ["createOrder"]) @aws_api_key @aws_iam
+  onUpdateOrder(filter: ModelSubscriptionOrderFilterInput): Order @aws_subscribe(mutations: ["updateOrder"]) @aws_api_key @aws_iam
+  onDeleteOrder(filter: ModelSubscriptionOrderFilterInput): Order @aws_subscribe(mutations: ["deleteOrder"]) @aws_api_key @aws_iam
+}

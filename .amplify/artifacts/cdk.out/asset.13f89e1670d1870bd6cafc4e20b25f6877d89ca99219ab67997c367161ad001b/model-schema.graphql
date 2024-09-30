@@ -1,0 +1,12 @@
+type Order @model @auth(rules: [{allow: public, provider: apiKey}])
+{
+  order_id: String!
+  user_id: String!
+  email: String
+  selected_package: String!
+  vials: Int!
+  pricePerVial: Float!
+  total: Float!
+  created_at: AWSTimestamp!
+  updated_at: AWSTimestamp!
+}

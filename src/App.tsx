@@ -1,20 +1,28 @@
-import { Authenticator } from '@aws-amplify/ui-react';
+import { Authenticator} from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 import outputs from "../amplify_outputs.json";
-import TodoList from './TodoList';
+import OrderingDashboard from './components/OrderingDashboard';
 
 Amplify.configure(outputs);
 
 export default function App() {
   return (
-    <Authenticator>
+    <Authenticator className='flex justify-center items-center h-screen'>
       {({ signOut, user }) => (
-        <main>
-          <h1>Hello {user?.username}</h1>
-          <TodoList/>
-          <button onClick={signOut}>Sign out</button>
-        </main>
+        <div className="min-h-screen flex flex-col">
+          <div className="flex justify-end p-4 bg-gray-100">
+            <button 
+              onClick={signOut} 
+              className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded"
+            >
+              Sign out
+            </button>
+          </div>
+          <main className="flex flex-1">
+            <OrderingDashboard user={user} />
+          </main>
+        </div>
       )}
     </Authenticator>
   );
