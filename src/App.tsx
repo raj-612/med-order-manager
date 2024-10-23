@@ -3,6 +3,7 @@ import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 import outputs from "../amplify_outputs.json";
 import OrderingDashboard from './components/OrderingDashboard';
+import ChatWidget from './components/chatWidget';
 
 Amplify.configure(outputs);
 
@@ -21,6 +22,7 @@ export default function App() {
           </div>
           <main className="flex flex-1">
             <OrderingDashboard user={user} />
+            <ChatWidget />
           </main>
         </div>
       )}
