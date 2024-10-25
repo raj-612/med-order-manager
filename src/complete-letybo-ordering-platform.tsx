@@ -1,215 +1,335 @@
-import { useState, useEffect } from 'react';
+'use client'
+
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
-import { ArrowRight, Package, Zap, Star, Sparkles } from 'lucide-react';
-import { createOrder } from '@/services/orderService';
-import { v4 as uuidv4 } from 'uuid';
-import clsx from 'clsx';
+import { ArrowRight, Star, Clock, TrendingDown } from 'lucide-react';
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 
-interface PackageType {
-  name: string;
+interface VolumePricing {
   vials: number;
   pricePerVial: number;
-  icon: React.ComponentType;
+  discount: number;
 }
 
-interface LetyboOrderingPlatformProps {
-  user: any;
-  className?: string;
-  onOrderPlaced: () => void;
+interface CommitmentLevel {
+  vials: number;
+  pricePerVial: number;
+  description: string;
+  savings: number;
 }
 
-const LetyboOrderingPlatform = ({ user, className, onOrderPlaced }: LetyboOrderingPlatformProps) => {
-  const [selectedPackage, setSelectedPackage] = useState<PackageType | null>(null);
-  const [totalOrders, setTotalOrders] = useState(0);
-  const [customVials, setCustomVials] = useState(6);
-  const [currentTier, setCurrentTier] = useState(0);
-  const [nextTierProgress, setNextTierProgress] = useState(0);
+interface User {
+  // Define the structure of your user object here
+  // For example:
+  id: string;
+  name: string;
+  // Add other relevant fields
+}
 
-  const minPrice = 225;
-  const maxPrice = 350;
-  const maxVials = 60;
+interface ComponentProps {
+  user: User;
+}
 
-  const calculatePrice = (vials: number) => {
-    const priceRange = maxPrice - minPrice;
-    const priceDecrement = priceRange * ((vials - 6) / (maxVials - 6));
-    return Math.round((maxPrice - priceDecrement) * 100) / 100;
-  };
+export default function Component({ user }: ComponentProps) {
+  const [selectedQuantity, setSelectedQuantity] = useState(6);
+  const [commitmentLevel, setCommitmentLevel] = useState<CommitmentLevel | null>(null);
+  const [initialOrder, setInitialOrder] = useState(6);
+  const [showCommitmentOptions, setShowCommitmentOptions] = useState(false);
+  const [showOrderSummary, setShowOrderSummary] = useState(false);
 
-  const packages: PackageType[] = [
-    { name: "Starter", vials: 12, get pricePerVial() { return calculatePrice(this.vials); }, icon: Package },
-    { name: "Professional", vials: 24, get pricePerVial() { return calculatePrice(this.vials); }, icon: Zap },
-    { name: "Premium", vials: 36, get pricePerVial() { return calculatePrice(this.vials); }, icon: Star }
+  const listPrice = 400;
+
+  const volumePricing: VolumePricing[] = [
+    { vials: 6, pricePerVial: 375, discount: 6 },
+    { vials: 12, pricePerVial: 350, discount: 13 },
+    { vials: 24, pricePerVial: 325, discount: 19 },
+    { vials: 36, pricePerVial: 290, discount: 28 },
+    { vials: 54, pricePerVial: 275, discount: 31 },
+    { vials: 102, pricePerVial: 250, discount: 38 }
   ];
 
-  const tiers = [
-    { threshold: 0, name: "Starter" },
-    { threshold: 12, name: "Professional" },
-    { threshold: 24, name: "Premium" }
-  ];
-
-  useEffect(() => {
-    updateTierInfo(totalOrders + (selectedPackage?.vials || 0));
-  }, [totalOrders, selectedPackage]);
-
-  const updateTierInfo = (vials: number) => {
-    const newTier = tiers.findIndex((tier, index) => 
-      vials >= tier.threshold && (index === tiers.length - 1 || vials < tiers[index + 1].threshold)
-    );
-    setCurrentTier(newTier);
-
-    const currentTierThreshold = tiers[newTier].threshold;
-    const nextTierThreshold = tiers[newTier + 1]?.threshold || Infinity;
-    const progress = ((vials - currentTierThreshold) / (nextTierThreshold - currentTierThreshold)) * 100;
-    setNextTierProgress(Math.min(progress, 100));
-  };
-
-  const handleSelectPackage = (pkg: PackageType) => {
-    setSelectedPackage(pkg);
-    setCustomVials(pkg.vials);
-    updateTierInfo(totalOrders + pkg.vials);
-  };
-
-  const handlePlaceOrder = async () => {
-    if (selectedPackage && user) {
-      const newTotalOrders = totalOrders + selectedPackage.vials;
-      setTotalOrders(newTotalOrders);
-
-      const orderData = {
-        order_id: uuidv4(),
-        user_id: user.userId,
-        email: user.signInDetails.loginId,
-        selected_package: selectedPackage.name,
-        vials: selectedPackage.vials,
-        pricePerVial: selectedPackage.pricePerVial,
-        total: selectedPackage.vials * selectedPackage.pricePerVial,
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString()
-      };
-
-      try {
-        const data:any = await createOrder(orderData);
-        alert(`Order placed successfully! Order ID: ${data.order_id}`);
-        onOrderPlaced(); // Call the refresh callback
-      } catch (error:any) {
-        alert(error.message);
-      }
-    } else {
-      alert('User information is missing. Please log in again.');
+  const commitmentLevels: CommitmentLevel[] = [
+    { 
+      vials: 36,
+      pricePerVial: 290,
+      description: "Best for growing practices",
+      savings: 3960
+    },
+    {
+      vials: 54,
+      pricePerVial: 275,
+      description: "Perfect for established practices",
+      savings: 6750
+    },
+    {
+      vials: 102,
+      pricePerVial: 250,
+      description: "Ideal for high-volume practices",
+      savings: 15300
     }
+  ];
+
+  const calculatePrice = (vials: number, isCommitment = false): number => {
+    if (isCommitment && commitmentLevel) {
+      return commitmentLevel.pricePerVial;
+    }
+    const tier = [...volumePricing]
+      .reverse()
+      .find(tier => vials >= tier.vials) || volumePricing[0];
+    return tier.pricePerVial;
   };
 
-  const handleCustomVialChange = (value: number[]) => {
-    const vials = value[0];
-    setCustomVials(vials);
-    const pricePerVial = calculatePrice(vials);
-    setSelectedPackage({ name: "Custom", vials: vials, pricePerVial: pricePerVial, icon: Sparkles });
-    updateTierInfo(totalOrders + vials);
+  const calculateSavings = (quantity: number, pricePerVial: number): number => {
+    const standardCost = quantity * listPrice;
+    const actualCost = quantity * pricePerVial;
+    return standardCost - actualCost;
   };
 
-  const CustomProgressBar = ({ value }: { value: number }) => (
-    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-      <div 
-        className="h-full bg-royal-blue transition-all duration-500 ease-in-out"
-        style={{ width: `${value}%` }}
-      />
-    </div>
-  );
+  const handleVolumeSelect = (vials: number) => {
+    setSelectedQuantity(vials);
+    setCommitmentLevel(null);
+    setShowCommitmentOptions(false);
+  };
+
+  const handleVolumeOrderChange = (value: number[]) => {
+    setSelectedQuantity(value[0]);
+    setCommitmentLevel(null);
+    setShowCommitmentOptions(false);
+  };
+
+  const handleSelectCommitment = (level: CommitmentLevel) => {
+    setCommitmentLevel(level);
+    setShowCommitmentOptions(true);
+    setInitialOrder(6);
+  };
+
+  const handleInitialOrderChange = (value: number[]) => {
+    setInitialOrder(value[0]);
+  };
+
+  const handlePlaceOrder = () => {
+    setShowOrderSummary(true);
+  };
+
+  const orderSummary = () => {
+    const quantity = showCommitmentOptions ? initialOrder : selectedQuantity;
+    const pricePerVial = calculatePrice(selectedQuantity, showCommitmentOptions);
+    const totalPrice = showCommitmentOptions && commitmentLevel
+      ? initialOrder * commitmentLevel.pricePerVial
+      : selectedQuantity * pricePerVial;
+    const totalSavings = calculateSavings(quantity, pricePerVial);
+
+    return `
+      Quantity: ${quantity} vials
+      Price per Vial: $${pricePerVial}
+      Total Price: $${totalPrice.toLocaleString()}
+      Total Savings: $${totalSavings.toLocaleString()}
+      ${commitmentLevel ? `Commitment Plan: ${commitmentLevel.vials} Vials Plan` : 'Volume Pricing'}
+    `;
+  };
 
   return (
-    <div className={clsx("w-full p-4", className)}>
-      <Card className="w-full shadow-lg overflow-hidden">
-        <CardHeader className="bg-royal-blue text-white py-6 px-6 text-center">
-          <CardTitle className="text-black text-2xl font-bold mb-1">Letybo Ordering Platform</CardTitle>
-          <CardDescription className="text-blue-700">Order in multiples of 6 vials</CardDescription>
-        </CardHeader>
-        <CardContent className="p-6 space-y-6">
-          <div className="space-y-6">
-            <h3 className="font-semibold text-lg mb-4 flex items-center justify-center">
-              Most Popular Packages <Sparkles className="ml-2 h-4 w-4 text-royal-blue" />
-            </h3>
-            <div className="flex flex-wrap gap-6 mb-6">
-              {packages.map((pkg) => (
-                <Card 
-                  key={pkg.name} 
-                  className={`cursor-pointer transition-all ${selectedPackage === pkg ? 'ring-2 ring-royal-blue shadow-md' : 'hover:shadow-md'}`}
-                  onClick={() => handleSelectPackage(pkg)}
-                >
-                  <CardContent className="p-4 text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-royal-blue">
-                      {pkg.icon && <pkg.icon />}
-                    </div>
-                    <h3 className="font-semibold mb-1">{pkg.name}</h3>
-                    <p className="text-sm text-gray-500 mb-2">{pkg.vials} vials</p>
-                    <p className="font-bold mb-2">${pkg.pricePerVial.toFixed(2)}/vial</p>
-                    <Badge variant="secondary" className="bg-royal-blue/10 text-royal-blue">Popular</Badge>
-                  </CardContent>
-                </Card>
-              ))}
+    <Card className="shadow-lg overflow-hidden">
+      <CardHeader className="bg-primary text-primary-foreground py-8 px-6">
+        <CardTitle className="text-2xl font-bold">Letybo® Ordering for {user.name}</CardTitle>
+        <CardDescription className="text-primary-foreground/75">
+          Choose your preferred pricing structure
+        </CardDescription>
+      </CardHeader>
+
+      <CardContent className="p-6 space-y-6">
+        <div>
+          <h3 className="text-lg font-bold mb-4">Volume Pricing</h3>
+          <div className="grid grid-cols-6 gap-2 mb-4">
+            {volumePricing.map((tier) => (
+              <Button
+                key={tier.vials}
+                variant="outline"
+                className={`p-2 h-auto flex flex-col items-center transition-all ${
+                  selectedQuantity >= tier.vials ? 
+                  'bg-primary/10 border-primary text-primary' : 
+                  'hover:bg-primary/5 hover:border-primary/50'
+                }`}
+                onClick={() => handleVolumeSelect(tier.vials)}
+              >
+                <div className="font-bold">{tier.vials}</div>
+                <div className="text-current font-semibold">${tier.pricePerVial}</div>
+                <Badge variant="secondary" className={`text-xs mt-1 ${
+                  selectedQuantity >= tier.vials ? 
+                  'bg-primary/20' : 'bg-muted'
+                }`}>
+                  {tier.discount}% off
+                </Badge>
+              </Button>
+            ))}
+          </div>
+
+          <div className="mt-6">
+            <div className="flex justify-between text-sm font-medium mb-2">
+              <label>Fine-tune Quantity:</label>
+              <span className="text-primary">{selectedQuantity} vials selected</span>
             </div>
-            
-            <div className="mb-6">
-              <h3 className="font-semibold text-lg mb-3">Custom Order</h3>
-              <p className="text-sm text-gray-600 mb-2">Adjust the slider to order any multiple of 6 vials</p>
-              <Slider
-                min={6}
-                max={60}
-                step={6}
-                value={[customVials]}
-                onValueChange={handleCustomVialChange}
-                className="mb-2"
-              />
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-gray-600">6 vials</span>
-                <span className="text-sm text-gray-600">60 vials</span>
-              </div>
-              <p className="text-sm font-semibold mb-2">
-                Selected: {customVials} vials at ${calculatePrice(customVials).toFixed(2)}/vial
-              </p>
-              
-              <div className="mt-4">
-                <h4 className="font-semibold mb-2">Your Tier Status:</h4>
-                <CustomProgressBar value={nextTierProgress} />
-                <div className="flex justify-between mt-2 text-sm text-gray-600">
-                  <span>Starter</span>
-                  <span>Professional</span>
-                  <span>Premium</span>
-                </div>
-                <p className="text-sm mt-2">
-                  Current Tier: <Badge variant="outline" className="bg-royal-blue/10 text-royal-blue">{tiers[currentTier].name}</Badge>
-                </p>
-                <p className="text-sm">
-                  {totalOrders} vials ordered + {selectedPackage?.vials || 0} in cart
-                  {currentTier < tiers.length - 1 && ` (${tiers[currentTier + 1].threshold - (totalOrders + (selectedPackage?.vials || 0))} more to next tier)`}
-                </p>
-              </div>
+            <Slider
+              min={6}
+              max={102}
+              step={6}
+              value={[selectedQuantity]}
+              onValueChange={handleVolumeOrderChange}
+              className="my-4"
+            />
+            <div className="flex justify-between text-sm text-muted-foreground">
+              <span>Minimum: 6 vials</span>
+              <span>Maximum: 102 vials</span>
             </div>
-            
-            {selectedPackage && (
-              <Card className="mb-6 bg-royal-blue/5 border-royal-blue">
+          </div>
+        </div>
+
+        <div className="bg-accent rounded-lg p-4">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <Star className="h-5 w-5 text-primary" />
+              <h3 className="text-lg font-bold">Partnership Plans</h3>
+            </div>
+            <Badge className="bg-primary text-primary-foreground">Best Value</Badge>
+          </div>
+          
+          <div className="space-y-4">
+            {commitmentLevels.map((level) => (
+              <Card 
+                key={level.vials}
+                className={`cursor-pointer hover:shadow-md transition-all ${
+                  commitmentLevel === level ? 'ring-2 ring-primary' : ''
+                }`}
+                onClick={() => handleSelectCommitment(level)}
+              >
                 <CardContent className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">Selected Package: {selectedPackage.name}</h3>
-                  <p className="mb-2">{selectedPackage.vials} vials at ${selectedPackage.pricePerVial.toFixed(2)}/vial</p>
-                  <p className="font-bold text-xl mb-4">
-                    Total: ${(selectedPackage.vials * selectedPackage.pricePerVial).toFixed(2)}
-                  </p>
-                  <Button className="text-black w-full bg-royal-blue hover:bg-royal-blue/90" onClick={handlePlaceOrder}>
-                    Place Order <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h4 className="font-bold">{level.vials} Vials Plan</h4>
+                      <p className="text-sm text-muted-foreground">{level.description}</p>
+                      <div className="flex items-center gap-1 text-green-600 text-sm">
+                        <TrendingDown className="h-4 w-4" />
+                        Save ${level.savings.toLocaleString()}
+                      </div>
+                      <div className="flex items-center gap-1 text-muted-foreground text-sm mt-1">
+                        <Clock className="h-4 w-4" />
+                        4-month commitment
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-primary">
+                        ${level.pricePerVial}
+                      </div>
+                      <div className="text-sm text-muted-foreground">per vial</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">
+                        {((listPrice - level.pricePerVial) / listPrice * 100).toFixed(0)}% Off
+                      </Badge>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
-            )}
-
-            <p className="text-sm text-gray-500 italic mt-4">
-              Letybo can be ordered in multiples of 6 vials. Enjoy greater savings with larger orders!
-            </p>
+            ))}
           </div>
-        </CardContent>
-      </Card>
-    </div>
-  );
-};
 
-export default LetyboOrderingPlatform;
+          {showCommitmentOptions && commitmentLevel && (
+            <div className="mt-4 bg-background rounded-lg p-4 border border-primary/20">
+              <h4 className="font-bold mb-4">Select Initial Order Quantity</h4>
+              <Slider
+                min={6}
+                max={commitmentLevel.vials}
+                step={6}
+                value={[initialOrder]}
+                onValueChange={handleInitialOrderChange}
+                className="mb-4"
+              />
+              <div className="flex justify-between text-sm text-muted-foreground mb-4">
+                <span>Minimum: 6 vials</span>
+                <span>Maximum: {commitmentLevel.vials} vials</span>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 bg-accent p-4 rounded-lg">
+                <div className="text-center">
+                  <div className="text-sm text-muted-foreground">Initial Order</div>
+                  <div className="text-lg font-bold text-primary">{initialOrder}</div>
+                  <div className="text-xs text-muted-foreground">vials</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-sm text-muted-foreground">Remaining</div>
+                  <div className="text-lg font-bold text-primary">
+                    {commitmentLevel.vials - initialOrder}
+                  </div>
+                  <div className="text-xs text-muted-foreground">vials</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-sm text-muted-foreground">Period</div>
+                  <div className="text-lg font-bold text-primary">4</div>
+                  <div className="text-xs text-muted-foreground">months</div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Order Summary */}
+        <Card className="bg-muted">
+          <CardContent className="p-4">
+            <h3 className="font-bold text-lg mb-4">Order Summary</h3>
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <div className="text-sm text-muted-foreground">Quantity</div>
+                <div className="text-xl font-bold">
+                  {showCommitmentOptions ? initialOrder : selectedQuantity} vials
+                </div>
+              </div>
+              <div>
+                <div className="text-sm text-muted-foreground">Price per Vial</div>
+                <div className="text-xl font-bold">
+                  ${calculatePrice(selectedQuantity, showCommitmentOptions)}
+                </div>
+              </div>
+              <div>
+                <div className="text-sm text-muted-foreground">Total Price</div>
+                <div className="text-xl font-bold text-primary">
+                  ${(showCommitmentOptions && commitmentLevel ? 
+                    initialOrder * commitmentLevel.pricePerVial : 
+                    selectedQuantity * calculatePrice(selectedQuantity)
+                  ).toLocaleString()}
+                </div>
+              </div>
+              <div>
+                <div className="text-sm text-muted-foreground">Total Savings</div>
+                <div className="text-xl font-bold text-green-600">
+                  ${calculateSavings(
+                    showCommitmentOptions ? initialOrder : selectedQuantity,
+                    calculatePrice(selectedQuantity, showCommitmentOptions)
+                  ).toLocaleString()}
+                </div>
+              </div>
+            </div>
+            <Button className="w-full bg-primary hover:bg-primary/90" onClick={handlePlaceOrder}>
+              Place Order
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </CardContent>
+        </Card>
+
+        <AlertDialog open={showOrderSummary} onOpenChange={setShowOrderSummary}>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Order Summary</AlertDialogTitle>
+              <AlertDialogDescription>
+                <pre className="whitespace-pre-wrap">{orderSummary()}</pre>
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogAction>Close</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      </CardContent>
+    </Card>
+  );
+}
